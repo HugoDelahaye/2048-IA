@@ -3,21 +3,9 @@ from tkinter import *
 from random import randint
 from copy import deepcopy
 import numpy as np
-import math
-import time
-import threading
 from PIL import ImageGrab
 from PIL import Image
 
-
-
-def norm_func(x):             
-    return 1.0/(1+math.exp(-x))   #sigmoïde
-    
-def der_norm_func(x):
-    y = math.exp(-x)               #dérivée de la sigmoïde
-    return y/(1+y)**2
-    
 
     
 class App():
@@ -336,7 +324,7 @@ class App():
                 table,score = self._up(self.table,self.scorevar.get(),True)   
             score2 = self.scorevar.get() 
             if int(score2)<int(score1):
-                print score1
+                #print score1
                 break
             if table_act_act==self.table and second is True:
                 third = True
@@ -352,12 +340,4 @@ class App():
           
                                                                                       
 app = App(Tk())
-app.run()
-
-'''for i in range(1279):
-    path = "C:\\Users\\Hugo\\Documents\\python\\2048_screenshots\\screenshot_"+str(i)+".jpg"
-    img = Image.open(path)
-    cropped_img = img.crop((88,301,508,809))
-    save_path = "C:\\Users\\Hugo\\Documents\\python\\2048_screenshots\\screenshot_resized_"+str(i)+".jpg"
-    cropped_img.save(save_path)'''
-    
+app.run()   
